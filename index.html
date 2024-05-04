@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text">
+        <p>The Tanishka Varshney is the great person in the world<br>
+        she is amazing and her everything is amazing.</p>
+    </div>
+    <input type="text" id="searchtext" placeholder="enter the text">
+    <button id="searchbtn" onclick="searchtext()">Search</button>
+    <div id="result"></div>
+    <script>
+        // const text=document.getElementById("text");
+        // const searchin=document.getElementById("serachtext");
+        // const searchbtn=document.getElementById("searchbtn");
+        // const result=document.getElementById("result");
+        // function click(){
+        //     searchbtn.alert("your word");
+        // }
+    
+        // searchbtn.addEventListener("click",()=>{
+        //     // function alert(){
+        //     //     +
+        //     // }
+        //    const searchtxt=searchin.value;
+        //    const txt=text.textContent;
+        //    index=txt.indexOf(searchtxt);
+        //    if (index !== -1){
+        //     result.innerText=`Found : ${searchtxt}`;
+        //     alert(`Found "${searchtxt}"`);
+        // }
+        // else{
+        //     result.innerText=`Not Found : ${searchtxt}`;
+        //     alert(`Not Found "${searchtxt}"`);
+        // }
+        // });
+        function searchtext(){
+            var searchtxt=document.getElementById('searchtxt').value;
+            var text=document.getElementById('text');
+            if(searchtxt.trim() !== ''){
+                var txt=text.innerHTML;
+                var regex= new RegExp(searchtxt,'g');
+                var matches = text.match(regex);
+                if(matches){
+                    var displayText=matches.join('<br>');
+                    text.innerHTML=txt.replace(regex,'<span style="background-color:pink;');
+                    alert(displayText);}
+                
+                    else{
+                        window.alert("Textnotfound!");
+                    }
+                    // else{
+                    //     window.alert('please enter');
+                    // }
+                }
+        }
+        
+    </script>
+</body>
+</html>
